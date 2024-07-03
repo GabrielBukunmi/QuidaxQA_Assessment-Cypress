@@ -67,7 +67,7 @@ describe('Simple Forms Automation', function() {
     // Click the button to get total
     simpleFormPage.getTotal().should('be.enabled').click();
 
-    // Calculate the expected sum
+    // Calculate the expected sum of the two numbers
     const expectedSum = (Number(testData.testNumber1) + Number(testData.testNumber2)).toString();
 
     // Verify the displayed value is the sum of the two input numbers
@@ -76,11 +76,6 @@ describe('Simple Forms Automation', function() {
     // Clear the input field and verify it is cleared
     simpleFormPage.Multiple_firstInputField().clear().should('have.value', '');
     simpleFormPage.Multiple_2ndInputField().clear().should('have.value', '');
-
-    
-
-  
-
   
   });
 });
