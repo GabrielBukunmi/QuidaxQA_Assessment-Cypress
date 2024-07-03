@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
   //this timeout will apply to all spec file i.e all .js test
@@ -11,11 +12,13 @@ module.exports = defineConfig({
   retries:{
     runMode:1
   },
-  projectId: "6x76ku",
+  
   e2e: {
     setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber());
       // implement node event listeners here
     },
-    specPattern:'cypress/integration/examples/examples/*.js'
+    specPattern: ['cypress/integration/examples/**/*.js', 'cypress/integration/examples/**/*.feature'],
+
   },
 });

@@ -79,13 +79,7 @@ describe('Simple Forms Automation', function() {
 
     
 
-    // Dynamic Dropdown
-    cy.get('#autocomplete').type('ind');
-    cy.get('.ui-menu-item').each(($el, index, $list) => {
-      if ($el.text() == "India") {
-        cy.wrap($el).click();
-      }
-    });
+  
 
   
   });
